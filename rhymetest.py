@@ -33,6 +33,18 @@ def phoneticMatchRating(originalString,candidates):
 
     return syllableScores, assonanceScores
 
+def doLinesRhyme(line1, line2):
+    endWord1 = line1.split(" ")[-1]
+    endWord2 = line2.split(" ")[-1]
+    if endWord1 in ipa.get_rhymes(endWord2):
+        return 10
+    else:
+        return 0
+
+print(doLinesRhyme(firstString,thirdString))
+
+#maybe later we can add a stress match part?
+
 def bestChoice(originalString, candidates, syllableWeight, assonanceWeight):
     syllableScores, assonanceScores = phoneticMatchRating(originalString, candidates)
     finalScores = syllableScores * syllableWeight + assonanceScores * assonanceWeight
