@@ -36,8 +36,6 @@ def phoneticMatchRating(originalString,candidates):
 def bestChoice(originalString, candidates, syllableWeight, assonanceWeight):
     syllableScores, assonanceScores = phoneticMatchRating(originalString, candidates)
     finalScores = syllableScores * syllableWeight + assonanceScores * assonanceWeight
-    print(syllableScores, assonanceScores)
-    print(finalScores)
     topScore=max(finalScores)
     for i,words in enumerate(finalScores):
         if words == topScore:
@@ -45,8 +43,7 @@ def bestChoice(originalString, candidates, syllableWeight, assonanceWeight):
             return candidates[i]
     
     
-    
-print(bestChoice(firstString, candidates, 1, 0.1))
+
     
     
     
