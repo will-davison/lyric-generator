@@ -10,8 +10,7 @@ def replace_words_from_song():
         # lines_from_book = [line for line in f2.readlines()]
         # print(lines_from_book)
 
-
-    final_result = []
+    final_list = []
     for line in lines:
         list_of_words = [pronouncing.rhymes(word) for word in line.split(' ')]
         line_as_array = line.split(' ')
@@ -26,11 +25,15 @@ def replace_words_from_song():
                     dump_list.append(line_as_array[i])
             except:
                 pass
-        print(' '.join(dump_list))
+        final_list.append(' '.join(dump_list))
+    return final_list
 
 
         
 
-replace_words_from_song()
-print('\n\n@@@@@@@@@')
+final_results = []
+final_results.append(replace_words_from_song())
+final_results.append(replace_words_from_song())
+final_results.append(replace_words_from_song())
+
         
